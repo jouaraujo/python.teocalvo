@@ -47,6 +47,10 @@ desses dois valores e retorne o resultado:
 
 soma: x.xx
 """
+#%%
+a = float(input("Digite um número: "))
+b = float(input("Digite outro número: "))
+print(f"soma de {a} com {b} é igual à {a + b}")
 
 """
 Faça um programa que receba dois valores 
@@ -54,6 +58,11 @@ A e B. Faça a potência desses dois valores e retorne o resultado
 
 a ^ b = z 
 """
+#%%
+a = int(input("Digite um número para ser  expoente : "))
+b = int(input("Digite qual a potência:"))
+print(f"{a} elevado à {b} é igual a {a ** b}")
+
 
 """
 Faça um programa que receba um número em segundos, converta
@@ -65,3 +74,11 @@ Faça um programa que receba um número em segundos, converta
  entrada : 140153
  saida : 38:55:53
 """
+# %%
+num = int(input("Digite um segundos para serem convertidos em horas, minutos e segundo"))
+convert_hora = round(num / 3600)
+convert_min = round(num / 60)
+convert_sec = round((num / 3600)*100)
+print(f"entrada: {num}")
+print(f"saida: {convert_hora}:{convert_min}:{convert_sec}")
+
