@@ -5,7 +5,7 @@ e faça uma saudação.
 "Olá fulano! Seja Bem vindo!"
 """
 #%%
-nome = input("Digite seu nome: ")
+nome = input("Entre com o seu nome: ")
 print(f"Olá {nome}! Seja bem vindo!")
 
 """
@@ -16,8 +16,8 @@ de uma pessoa. Depois exiba a mensagem:
 Seja bem vindo!"
 """
 #%%
-nome = input("Digite seu nome: ")
-idade = int(input("Digite sua idade: "))
+nome = input("Entre com o seu nome: ")
+idade = int(input("Entre com a sua idade: "))
 print(f"Olá {nome}, bom saber que você tem {idade} anos.")
 print("Seja bem vindo!")
 
@@ -31,14 +31,12 @@ circunferência no seguinte formato.
 "Perímetro = y.yy"
 """
 #%%
-import math as m
+raio = float(input("Entre com o tamanho do raio: "))
+perimetro = 2 * 3.14 * raio
+area = 3.14 * (raio ** 2)
 
-r = float(input("Digite o raio do circulo: "))
-perimetro = 2 * m.pi * r
-area = m.pi * (r ** 2)
-
-print(f"Área = {area}:")
-print(f"Perímetro = {perimetro}")
+print(f"Área = {area:.2f}")
+print(f"Perímetro = {perimetro:.2f}")
 
 
 """
