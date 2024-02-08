@@ -46,9 +46,11 @@ desses dois valores e retorne o resultado:
 soma: x.xx
 """
 #%%
-a = float(input("Digite um número: "))
-b = float(input("Digite outro número: "))
-print(f"soma de {a} com {b} é igual à {a + b}")
+a = float(input("Entre com o valor de A: "))
+b = float(input("Entre com o valor de B: "))
+
+soma = a + b
+print(f"Soma: {soma:.2f}")
 
 """
 Faça um programa que receba dois valores 
@@ -57,9 +59,10 @@ A e B. Faça a potência desses dois valores e retorne o resultado
 a ^ b = z 
 """
 #%%
-a = int(input("Digite um número para ser  expoente : "))
-b = int(input("Digite qual a potência:"))
-print(f"{a} elevado à {b} é igual a {a ** b}")
+a = float(input("Entre com o valor de A : "))
+b = float(input("Entre com o valor de B:"))
+
+print(f"{a}^{b} = {a ** b}")
 
 
 """
@@ -73,10 +76,12 @@ Faça um programa que receba um número em segundos, converta
  saida : 38:55:53
 """
 # %%
-num = int(input("Digite um segundos para serem convertidos em horas, minutos e segundo"))
-convert_hora = round(num / 3600)
-convert_min = round(num / 60)
-convert_sec = round((num / 3600)*100)
-print(f"entrada: {num}")
-print(f"saida: {convert_hora}:{convert_min}:{convert_sec}")
+segundos = int(input("Entre com o tempo em segundos: "))
 
+horas = segundos // (60 * 60)
+segundos = segundos % (60 * 60)
+
+minutos = segundos // 60
+segundos = segundos % 60
+
+print(f"{horas:02}:{minutos:02}:{segundos:02}")
