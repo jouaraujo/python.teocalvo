@@ -1,8 +1,10 @@
 #%%
 nome = "Téo Calvo"
 
+j = 1
 for i in nome:
-    print(i)
+    print(f"Elemento {j}: {i}")
+    j += 1
     
 #%%
 for i in range(1, 11):
