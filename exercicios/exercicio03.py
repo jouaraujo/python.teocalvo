@@ -7,23 +7,24 @@ menor: y
 maior: z
 """
 #%%
-total = 0
-notas = []
-while total < 4:
-    nota = int(input("Entre com uma nota: "))
-    notas.append(nota)
-    total += 1
+n1 = float(input("Entre com a nota 1: "))
+n2 = float(input("Entre com a nota 2: "))
+n3 = float(input("Entre com a nota 3: "))
+n4 = float(input("Entre com a nota 4: "))
 
-print(notas)
-notas.sort()
+notas = [n1,n2,n3,n4]
 
-print(f"média: {sum(notas) / len(notas)}")
-print(f"menor: {notas[0]}")
-print(f"maior: {notas[-1]}")
+media = sum(notas) / len(notas)
+minimo = min(notas)
+maximo = max(notas)
+
+print(f"Média: {media}")
+print(f"menor: {minimo}")
+print(f"maior: {maximo}")
 
     
 """
-Considere a lista: [120,"python",120.01,"asn",False,[10,20]]
+Considere a lista: [120,"python",120.01,"asw",False,[10,20]]
 
 Faça um programa que retorne as seguintes informações:
  -Elemento na posição -1 da lista
@@ -35,7 +36,7 @@ primeiro elemento: y
 último caractere do segundo elemento: z
 """
 #%%
-lista = [120,"python",120.01,"asn",False,[10,20]]
+lista = [120,"python",120.01,"asw",False,[10,20]]
 
 print(f"Elemento -1: {lista[-1]}")
 print(f"Primeiro elemento: {lista[0]}")
@@ -47,17 +48,33 @@ strings e as concatene em uma única String. Em seguida,
 exiba a string resultante.
 """
 #%%
-str_1 = input("Escreva algo: ")
-str_2 =input("Escreva algo: ")
+s1 = input("Entre com uma frase: ")
+s2 = input("Entre com outra frase: ")
 
-str = f"{str_1} {str_2}"
-
-print(str)
+string_final = s1 + s2
+print(string_final)
 
 """
 Refaça o exercício 2.2 utilizando for e listas para
 receber as notas dos alunos
 """
+#%%
+# notas = []
+
+# for i in range(4):
+#     n = float(input(f"Entre com a nota {i+1}: "))
+#     notas.append(n)
+
+notas = [float(input(f"Entre com a nota {i+1}: ")) for i in range(4)]
+    
+media = sum(notas) / len(notas)
+minimo = min(notas)
+maximo = max(notas)
+
+print(f"Média: {media}")
+print(f"Mínimo: {minimo}")
+print(f"máximo: {maximo}")
+
 
 """
 Faça um programa com uma função que recebe
@@ -70,7 +87,20 @@ aesE é a esarf lanigiro
 """
 #%%
 frase = input("Entre com uma frase: ")
-print(frase[::-1])
+#print(frase[::-1])
+texto = ""
+for palavra in frase.split():
+    texto = texto + palavra[::-1] + " "
+
+print(texto)
+
+### OUTRA VERSÃO
+
+frase_invertida = []
+for palavra in frase.split():
+    frase_invertida.append(palavra[::-1])
+
+print(" ".join(frase_invertida))
 
 """
 Considere a seguinte lista:
@@ -84,9 +114,15 @@ O menor valore está na posição y
 """
 #%%
 lista = [123,435,987,1984,2,19,423,-178,320]
-lista.sort()
-print(f"O maior valor está na posição: {lista[-1]}")
-print(f"O menor valor está na posição: {lista[0]}")
+
+menor = min(lista)
+maior = max(lista)
+
+menor_index = lista.index(menor)
+maior_index = lista.index(maior)
+
+print(f'O menor valor está na posição: {menor_index}')
+print(f'O maior valor está na posição: {maior_index}')
 
 """
 Escreva um programa que receba uma lista de
@@ -94,7 +130,26 @@ números do usuário e conte quantas vezes um
 número específico aparece na lista. Solicite ao
 usuário um número e exiba a contagem.
 """
+#%%
+numeros = []
 
+while True:
+    entrada = input("Entre com um número: ")
+    
+    if entrada == "":
+        break
+    
+    numeros.append(int(entrada))
+    
+numero_check = input("Entre com um número para checar a quantidade: ")
+
+total = 0
+for i in numeros:
+    if i == numero_check:
+        total += 1
+    
+print(f"O número {numero_check} aparece {total} vezes. Ou {numeros.count(numero_check)}")
+pritn(f"Ou {numeros.count(numero_check)}")
 """
 Escreva um programa que socilite ao usuário uma palavra e verifique se
 a palavra é um palíndromo (ou seja, é a mesma palavra quando lida de 
