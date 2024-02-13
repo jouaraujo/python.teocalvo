@@ -1,4 +1,6 @@
 
+import random
+
 def entrada_usuario(msg):
     """
     Validação de entrada do usuário para garantir que é um número e não uma string.
@@ -11,7 +13,7 @@ def entrada_usuario(msg):
             print("Entre com um valor válido!")
         
         
-sorte = 7
+sorte = random.randint(1,15)
 
 for i in range(3):
     
@@ -28,5 +30,6 @@ for i in range(3):
         break
 
 else:
-    print("Acabaram suas chances!")
+    print(f"Acabaram suas chances! O resultado correto era {sorte}")
+    
     
